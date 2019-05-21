@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h2>Meetings</h2>
+<table class ="table">
+<tr>
+
+    <th>Resources</th>
+    <th>Resource Type</th>
+
+</tr>{% for t in meeting_list %}
+
+<tr>
+    <td><a href="{url 'resourceDetail'id=p.id}{t.resourcename}}</a></td>
+    <td>{{t.resourcetype}}</td>
+
+</tr>>
+
+</table>>
+  
+{&endfor&}
+
+{&endblock&}

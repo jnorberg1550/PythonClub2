@@ -1,0 +1,8 @@
+{%extends 'base.html'%}
+{%block content%}
+<h2>{{prod.techtype}}</h2>
+<p>{{prod.productURL}}</p>
+<p>Number of Reviews{{reviewcount}}</p>
+<h3>Reviews</h3>
+{%for r in reviews%}
+<p>{{r.reviewtitle}}</p>
