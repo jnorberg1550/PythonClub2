@@ -15,6 +15,10 @@ def getMeetings (request):
     resources_list=MeetingTypes.objects.all()
     return render (request, 'clubapp/meetings.html'), {'meeting_list': meeting_list}
 
+def gettypes(request):
+    type_list=MeetingResource.objects.all()
+    return render(request, 'clubapp/types.html' ,{'type_list' : type_list})
+
 def meetingsAgenda (request, id):
      prod=Meetings.agenda.get (pk=id)
      agenda=Meetings.agenda.filter(meeting=id)
@@ -36,6 +40,12 @@ def newmeeting(request):
      else:
           form=MeetingForm()
      return render(request, 'clubapp/newmeeting.html', {'form' : form})
+
+def loginmessage(request):
+    return render(request, 'clubapp/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'clubapp/logoutmessage.html')  
 
 @login_required
 def newMeeting(request):
